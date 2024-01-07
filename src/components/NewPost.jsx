@@ -1,17 +1,20 @@
 
 import classes from './NewPost.module.css';
-function NewPost (props){
+function NewPost ({onBodyChange,onauthorChange,onCancel}){
 
     return(
         <form className={classes.form} >
             <p>
                 <label htmlFor="body">Text</label>
-                <textarea id="body" required rows={3} onChange={props.onBodyChange}/>
+                <textarea id="body" required rows={3} onChange={onBodyChange}/>
             </p>
-            <p>{props.msgEnteredBody}</p>
             <p>
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" required onChange={props.onauthorChange}/>
+                <input type="text" id="name" required onChange={onauthorChange}/>
+            </p>
+            <p className={classes.actions}>
+                <button type='button' onClick={onCancel}>Cancel</button>
+                <button>Submit</button>
             </p>
         </form>
     )

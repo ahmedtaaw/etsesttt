@@ -12,11 +12,21 @@ import NewPost from './components/NewPost'
 
 import PostsList from './components/PostsList'
 
-function App() {
+import MainHeader from './components/MainHeader'
 
+function App() {
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+  function showModalHandler() {
+    setModalIsVisible(true)
+  }
+  function hideModalHandler() {
+    setModalIsVisible(false)
+}
   return (
     <>
-    <PostsList/>
+    <MainHeader onCreatePost={showModalHandler}/>
+    <main><PostsList isPosting={modalIsVisible} onStopPosting={hideModalHandler}/></main>
+    
     {/*<NewPost/>
      
      <Post author="ahmed" body="he is a SW"/>
