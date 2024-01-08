@@ -14,6 +14,8 @@ function NewPost ({onCancel}){
     function authorChangeHandler(event) {
         setEnteredAuthor(event.target.value)
     }
+
+    
     function SubmitHandler(){
 
     }
