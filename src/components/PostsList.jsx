@@ -5,19 +5,7 @@ import Modal from "./Modal";
 import classes from './PostsList.module.css'
 
 function PostsList({isPosting,onStopPosting}) {
-    
-    const [enteredBody, setEnteredBody] = useState('')
-    const [enteredAuthor, setEnteredAuthor] = useState('')
-
-    
-
-    function bodyChangeHandler(event) {
-        setEnteredBody(event.target.value)
-    }
-
-    function authorChangeHandler(event) {
-        setEnteredAuthor(event.target.value)
-    }
+   
 
     // let modalContent;
     // if (modalIsVisible){
@@ -35,15 +23,12 @@ function PostsList({isPosting,onStopPosting}) {
             {isPosting && (
                 <Modal onClose={onStopPosting}>
                     <NewPost
-                        onBodyChange={bodyChangeHandler}
-                        onauthorChange={authorChangeHandler}
                         onCancel={onStopPosting} />
                 </Modal>
             )}
 
             <ul className={classes.posts}>
-                <Post author="Ahmed tawfik" body={enteredBody} />
-                <Post author="Nahla emad" body={enteredAuthor} />
+                <Post/>
             </ul>
         </>
     )
